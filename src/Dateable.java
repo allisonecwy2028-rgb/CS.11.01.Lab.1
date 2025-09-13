@@ -8,7 +8,13 @@ public class Dateable {
         int age = -1;
         while (age < 0) {
             try {
-                age = Integer.parseInt(scanner.nextLine());
+                int input = Integer.parseInt(scanner.nextLine());
+
+                if (input < 0) {
+                    System.out.println("Please enter a non-negative number.");
+                } else {
+                    age = input;
+                }
             }
             catch (NumberFormatException e) {
                 System.out.println("Please enter a valid number");
